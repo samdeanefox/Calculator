@@ -26,11 +26,24 @@ class ViewController: UIViewController {
             userIsInTheMiddleOfTypingANumber = true
         }
     }
+    
+    @IBAction func pi() {
+        userIsInTheMiddleOfTypingANumber = true
+        display.text = "\(M_PI)"
+    }
+    
     @IBAction func appendDecimal() {
-        if userIsInTheMiddleOfTypingANumber && !decimalEntered {
-            decimalEntered = true
-            display.text = display.text! + "."
+        
+        if !decimalEntered {
+            if userIsInTheMiddleOfTypingANumber {
+                display.text = display.text! + "."
+            }
+            else {
+                display.text = "0."
+            }
         }
+        decimalEntered = true
+        userIsInTheMiddleOfTypingANumber = true
     }
     
     @IBAction func operate(sender: UIButton) {
@@ -55,6 +68,11 @@ class ViewController: UIViewController {
         } else {
             displayValue = 0
         }
+    }
+    
+    @IBAction func clear(sender: UIButton) {
+        brain.clear()
+        displayValue = 0
     }
     
     var displayValue: Double {
