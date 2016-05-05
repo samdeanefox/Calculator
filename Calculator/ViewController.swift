@@ -89,10 +89,9 @@ class ViewController: UIViewController {
     
     var stackDisplayValue: String {
         get {
-            return ""
+            return stackDisplay.text!
         }
         set {
-            
         }
     }
     
