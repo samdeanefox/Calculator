@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var display: UILabel!
+    @IBOutlet weak var stackDisplay: UILabel!
     
     var userIsInTheMiddleOfTypingANumber = false
     var decimalEntered = false
@@ -83,6 +84,15 @@ class ViewController: UIViewController {
         set {
             display.text = "\(newValue)"
             userIsInTheMiddleOfTypingANumber = false
+        }
+    }
+    
+    var stackDisplayValue: String {
+        get {
+            return ""
+        }
+        set {
+            
         }
     }
     
